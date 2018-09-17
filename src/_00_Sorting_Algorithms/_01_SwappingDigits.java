@@ -19,7 +19,7 @@ class _01_SwappingDigits {
 		  int[] z = {7, 3, 5, 9, 2}; int[] q = {2, 3, 5, 7, 9}; sortIntArray(z);
 		  assertArrayEquals(q, z);
 		  
-		//  int[] m = {7, 3, 9, 5, 2}; assertEquals(5, findMiddle(m));
+		  int[] m = {7, 3, 9, 5, 2}; assertEquals(5, findMiddle(m));
 		 
 	}
 
@@ -48,6 +48,9 @@ class _01_SwappingDigits {
 			}
 			if(arr[i] > arr[i+1]) {
 				
+				temp = arr[i];
+				arr[i] = arr[i+1];
+				arr[i+1] = temp;
 //				arr[i] = temp[i+1];
 //				arr[i+1] = temp[i];
 //				temp = arr.clone();
@@ -65,6 +68,33 @@ class _01_SwappingDigits {
 	// *Hint* it helps to sort it first.
 	// *Double Hint* Use the method you already wrote in step 2 to sort it
 	public static int findMiddle(int[] arr) {
-		return 0;
+		int temp = 0;
+		for(int j = 0; j < arr.length; j++) {
+		for(int i = 0; i < arr.length; i++) {
+			if(i + 1 > arr.length - 1 ) {
+				break;
+			}
+			if(arr[i] > arr[i+1]) {
+				
+				temp = arr[i];
+				arr[i] = arr[i+1];
+				arr[i+1] = temp;
+			}
+			else {
+				
+			}
+		}
+		}
+		int middle = 0;
+		int sorted = 0;
+		int sorted2 = 0;
+		if(arr.length%2 == 0) {
+			
+		}
+		else {
+			sorted = arr.length/2;
+			middle = arr[sorted];
+		}
+		return middle;
 	}
 }
