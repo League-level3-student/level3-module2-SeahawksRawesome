@@ -13,9 +13,11 @@ public class MergeSorter extends Sorter {
 	@Override
 	void sort(int[] array, SortingVisualizer display) {
 		// 20. call the mergeSort method with 0 and the length of the array minus one
+		mergeSort(array, 0, array.length - 1, display);
 	}
 
 	private void mergeSort(int[] array, int low, int high, SortingVisualizer display) {
+		display.updateDisplay();
 		// 1. Create a temporary integer array that is the same length as the passed in
 		// array.
 		int[] temparr = new int[array.length];
@@ -69,12 +71,12 @@ public class MergeSorter extends Sorter {
 			}
 			// 17. make a while loop that runs while i is less than or equal to middle
 			while (i <= middle) {
-
+				// 18. set array at k equal to temp array at i
+				array[k] = temparr[i];
+				k += 1;
+				i += 1;
 			}
-			// 18. set array at k equal to temp array at i
-
 			// 19. increase k and i by 1
-
 		}
 	}
 
