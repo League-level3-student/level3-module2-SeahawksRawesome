@@ -20,7 +20,7 @@ public class HeapSorter extends Sorter {
 		// 9. make a for loop that starts half way between
 		// 0 and n and counts down until it is less than 0.
 		// Inside this for loop, call the heapSort method with n and i
-		for (int i = 0 + n / 2; i >= 0; i--) {
+		for (int i = n / 2; i >= 0; i--) {
 			heapSort(array, n, i, display);
 		}
 		// 10. make a for loop that starts at n-1
@@ -31,10 +31,12 @@ public class HeapSorter extends Sorter {
 			array[0] = array[i];
 			array[i] = temp;
 			// 12. call the heapSort method with i and 0
+			heapSort(array, i, 0, display);
 		}
 	}
 
 	public void heapSort(int[] array, int n, int i, SortingVisualizer display) {
+		display.updateDisplay();
 		// 2. create an integer called largest and set it equal to i
 		int largest = i;
 		// 3. create an integer called l and set it equal to 2 * i + 1
@@ -45,7 +47,7 @@ public class HeapSorter extends Sorter {
 		// and array element at l is greater than array element at largest
 		// then set largest equal to l
 		if (l < n && array[l] > array[largest]) {
-			largest = 1;
+			largest = l;
 		}
 		// 6. if r is less than n
 		// and array element at r is greater than array element at largest
