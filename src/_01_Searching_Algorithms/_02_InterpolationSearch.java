@@ -38,9 +38,10 @@ public class _02_InterpolationSearch {
             //   then set start equal to position plus one
             if(array[position] < value) {
             	start = position + 1;
+            } else {            	
+            	end = position -1;
             }
             //7. otherwise, set end equal to position minus one
-            end = position -1;
       }    
         //8. Return -1 because the value was not found
       return -1;
