@@ -60,26 +60,39 @@ public class _00_MoreAndMoreTests {
 
 	  }
 	public boolean isSquare(double j) {
-			for(int i = 3; i < j; i++) {
-				if(Math.sqrt(j) > i && Math.sqrt(j) < i+1) {
-					return false;
+			for(int i = 1; i <= j; i++) {
+				if(i*i == j) {
+					return true;
+				}
+				else {
+					
 				}
 			}
-			return true;
+			return false;
 	}
-//	@Test
-//	  public void CubeTest() {
-//
-//	    assertTrue(isCube(27));
-//	    assertTrue(isCube(216));
-//	    assertTrue(isCube(729));
-//	    assertTrue(isCube(1));
-//	    assertFalse(isCube(3));
-//	    assertFalse(isCube(22));
-//	    assertFalse(isCube(143));
-//
-//	  }
+	@Test
+	  public void CubeTest() {
 
+	    assertTrue(isCube(27));
+	    assertTrue(isCube(216));
+	    assertTrue(isCube(729));
+	    assertTrue(isCube(1));
+	    assertFalse(isCube(3));
+	    assertFalse(isCube(22));
+	    assertFalse(isCube(143));
+
+	  }
+	public boolean isCube(double j) {
+		for(int i = 1; i <= j; i++) {
+			if(i*i*i == j) {
+				return true;
+			}
+			else {
+				
+			}
+		}
+		return false;
+}
 
 
 }
