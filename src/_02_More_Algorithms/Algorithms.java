@@ -99,6 +99,20 @@ public class Algorithms {
 		return sequence;
 	}
 	public static List<String> sortWords(List<String> words){
-		
+		String comp1 = null;
+		String comp2 = null;
+		for(int j = 0; j < words.size() -1; j++) {
+			for(int i = 0; i < words.size() -1; i++) {
+				
+				comp1 = words.get(i);
+				comp2 = words.get(i+1);
+				if(comp1.compareTo(comp2) >= 0) {
+					words.set(i, comp2);
+					words.set(i+1, comp1);
+				}
+			}
+		}
+		System.out.println(words);
+		return words;
 	}
 }
